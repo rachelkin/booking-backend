@@ -1,48 +1,484 @@
 {
-  "name": "booking",
-  "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
-  },
-  "private": true,
-  "dependencies": {
-    "@angular/common": "^20.3.0",
-    "@angular/compiler": "^20.3.0",
-    "@angular/core": "^20.3.0",
-    "@angular/forms": "^20.3.0",
-    "@angular/platform-browser": "^20.3.0",
-    "@angular/router": "^20.3.0",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.15.0"
-  },
-  "devDependencies": {
-    "@angular/build": "^20.3.6",
-    "@angular/cli": "^20.3.6",
-    "@angular/compiler-cli": "^20.3.0",
-    "@types/jasmine": "~5.1.0",
-    "jasmine-core": "~5.9.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.9.2"
-  }
+  "users": [
+    {
+      "id": "1",
+      "name": "Alice Johnson",
+      "email": "alice@example.com",
+      "password": "alice123",
+      "isAdmin": false
+    },
+    {
+      "id": "2",
+      "name": "Bob Smith",
+      "email": "bob@example.com",
+      "password": "bobpass",
+      "isAdmin": true
+    },
+    {
+      "id": "3",
+      "name": "Clara Brown",
+      "email": "clara@example.com",
+      "password": "clara321",
+      "isAdmin": false
+    },
+    {
+      "id": "4",
+      "name": "David Wilson",
+      "email": "david@example.com",
+      "password": "davidpass",
+      "isAdmin": false
+    },
+    {
+      "id": "5",
+      "name": "Emma Davis",
+      "email": "emma@example.com",
+      "password": "emma456",
+      "isAdmin": false
+    },
+    {
+      "id": "6",
+      "name": "Frank Miller",
+      "email": "frank@example.com",
+      "password": "frank789",
+      "isAdmin": true
+    },
+    {
+      "id": "7",
+      "name": "Grace Lee",
+      "email": "grace@example.com",
+      "password": "grace111",
+      "isAdmin": false
+    },
+    {
+      "id": "8",
+      "name": "Henry Taylor",
+      "email": "henry@example.com",
+      "password": "henry222",
+      "isAdmin": false
+    },
+    {
+      "id": "9",
+      "name": "Ivy Anderson",
+      "email": "ivy@example.com",
+      "password": "ivy333",
+      "isAdmin": false
+    },
+    {
+      "id": "10",
+      "name": "Jack Thomas",
+      "email": "jack@example.com",
+      "password": "jack444",
+      "isAdmin": false
+    },
+    {
+      "id": "11",
+      "name": "Kate Martinez",
+      "email": "kate@example.com",
+      "password": "kate555",
+      "isAdmin": true
+    },
+    {
+      "id": "12",
+      "name": "Leo Garcia",
+      "email": "leo@example.com",
+      "password": "leo666",
+      "isAdmin": false
+    },
+    {
+      "id": "13",
+      "name": "Mia Rodriguez",
+      "email": "mia@example.com",
+      "password": "mia777",
+      "isAdmin": false
+    },
+    {
+      "id": "14",
+      "name": "Noah White",
+      "email": "noah@example.com",
+      "password": "noah888",
+      "isAdmin": false
+    },
+    {
+      "id": "15",
+      "name": "רחל קינסבורסקי",
+      "email": "rachel67960@gmail.com",
+      "password": "123456",
+      "isAdmin": false
+    },
+    {
+      "id": "16",
+      "name": "מיכל בנגייב",
+      "email": "michal@gmail.com",
+      "password": "147147",
+      "isAdmin": false
+    },
+    {
+      "id": "17",
+      "name": "רעות כהן",
+      "email": "reutcohen@gmail.com",
+      "password": "963963",
+      "isAdmin": false
+    }
+  ],
+  "trips": [
+    {
+      "id": "1",
+      "name": "Paris City Tour",
+      "destination": "Paris, France",
+      "startDate": "2026-03-15",
+      "endDate": "2026-03-20",
+      "price": 1500,
+      "description": "Explore the Eiffel Tower, Louvre Museum, and Seine river cruise.",
+      "image": "https://picsum.photos/id/1011/400/200"
+    },
+    {
+      "id": "2",
+      "name": "London Highlights",
+      "destination": "London, UK",
+      "startDate": "2026-04-01",
+      "endDate": "2026-04-06",
+      "price": 1400,
+      "description": "Visit Big Ben, London Eye, and British Museum.",
+      "image": "https://picsum.photos/id/1015/400/200"
+    },
+    {
+      "id": "3",
+      "name": "Rome & Vatican",
+      "destination": "Rome, Italy",
+      "startDate": "2026-04-15",
+      "endDate": "2026-04-20",
+      "price": 1600,
+      "description": "Tour the Colosseum, Vatican City, and Sistine Chapel.",
+      "image": "https://picsum.photos/id/1021/400/200"
+    },
+    {
+      "id": "4",
+      "name": "Barcelona & Beaches",
+      "destination": "Barcelona, Spain",
+      "startDate": "2026-05-05",
+      "endDate": "2026-05-10",
+      "price": 1550,
+      "description": "Enjoy Gaudi architecture, La Rambla, and Mediterranean beaches.",
+      "image": "https://picsum.photos/id/1025/400/200"
+    },
+    {
+      "id": "5",
+      "name": "Amsterdam Canals",
+      "destination": "Amsterdam, Netherlands",
+      "startDate": "2026-05-20",
+      "endDate": "2026-05-25",
+      "price": 1300,
+      "description": "Canal cruises, Van Gogh Museum, and local markets.",
+      "image": "https://picsum.photos/id/1031/400/200"
+    },
+    {
+      "id": "6",
+      "name": "Prague Old Town",
+      "destination": "Prague, Czech Republic",
+      "startDate": "2026-06-01",
+      "endDate": "2026-06-06",
+      "price": 1350,
+      "description": "Charles Bridge, Old Town Square, and Prague Castle.",
+      "image": "https://picsum.photos/id/1035/400/200"
+    },
+    {
+      "id": "7",
+      "name": "Vienna Culture Tour",
+      "destination": "Vienna, Austria",
+      "startDate": "2026-06-10",
+      "endDate": "2026-06-15",
+      "price": 1450,
+      "description": "Visit Schönbrunn Palace, State Opera, and MuseumsQuartier.",
+      "image": "https://picsum.photos/id/1038/400/200"
+    },
+    {
+      "id": "8",
+      "name": "Santorini Escape",
+      "destination": "Santorini, Greece",
+      "startDate": "2026-07-01",
+      "endDate": "2026-07-06",
+      "price": 1700,
+      "description": "Relax on volcanic beaches, explore Oia village and sunset cruises.",
+      "image": "https://picsum.photos/id/1041/400/200"
+    },
+    {
+      "id": "9",
+      "name": "Lisbon & Alfama",
+      "destination": "Lisbon, Portugal",
+      "startDate": "2026-07-15",
+      "endDate": "2026-07-20",
+      "price": 1400,
+      "description": "Historic trams, Alfama district, and local cuisine tours.",
+      "image": "https://picsum.photos/id/1045/400/200"
+    },
+    {
+      "id": "10",
+      "name": "Istanbul Wonders",
+      "destination": "Istanbul, Turkey",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-06",
+      "price": 1500,
+      "description": "Hagia Sophia, Blue Mosque, and Bosphorus cruise.",
+      "image": "https://picsum.photos/id/1049/400/200"
+    },
+    {
+      "id": "11",
+      "name": "Berlin History Tour",
+      "destination": "Berlin, Germany",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-20",
+      "price": 1350,
+      "description": "Brandenburg Gate, Berlin Wall, and Museum Island.",
+      "image": "https://picsum.photos/id/1053/400/200"
+    },
+    {
+      "id": "12",
+      "name": "Dublin Adventure",
+      "destination": "Dublin, Ireland",
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-05",
+      "price": 1250,
+      "description": "Trinity College, Guinness Storehouse, and Temple Bar.",
+      "image": "https://picsum.photos/id/1057/400/200"
+    },
+    {
+      "id": "13",
+      "name": "Copenhagen Design",
+      "destination": "Copenhagen, Denmark",
+      "startDate": "2026-09-10",
+      "endDate": "2026-09-15",
+      "price": 1550,
+      "description": "Tivoli Gardens, Nyhavn harbor, and modern architecture.",
+      "image": "https://picsum.photos/id/1061/400/200"
+    },
+    {
+      "id": "14",
+      "name": "Budapest Thermal Baths",
+      "destination": "Budapest, Hungary",
+      "startDate": "2026-09-20",
+      "endDate": "2026-09-25",
+      "price": 1200,
+      "description": "Széchenyi Baths, Parliament Building, and Danube cruise.",
+      "image": "https://picsum.photos/id/1065/400/200"
+    },
+    {
+      "id": "16",
+      "name": "Stockholm Archipelago",
+      "destination": "Stockholm, Sweden",
+      "startDate": "2026-10-10",
+      "endDate": "2026-10-15",
+      "price": 1500,
+      "description": "Vasa Museum, Gamla Stan, and island hopping.",
+      "image": "https://picsum.photos/id/1073/400/200"
+    },
+    {
+      "id": "17",
+      "name": "Brussels & Bruges",
+      "destination": "Brussels, Belgium",
+      "startDate": "2026-10-20",
+      "endDate": "2026-10-25",
+      "price": 1300,
+      "description": "Grand Place, Atomium, and medieval Bruges.",
+      "image": "https://picsum.photos/id/1077/400/200"
+    },
+    {
+      "id": "18",
+      "name": "Krakow Heritage",
+      "destination": "Krakow, Poland",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-06",
+      "price": 1100,
+      "description": "Wawel Castle, Main Market Square, and salt mines.",
+      "image": "https://picsum.photos/id/1081/400/200"
+    },
+    {
+      "id": "19",
+      "name": "Athens Ancient Sites",
+      "destination": "Athens, Greece",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-15",
+      "price": 1450,
+      "description": "Acropolis, Parthenon, and Ancient Agora.",
+      "image": "https://picsum.photos/id/1085/400/200"
+    },
+    {
+      "id": "59",
+      "name": "KOREA.",
+      "destination": "NORTH KOREA",
+      "startDate": "2026-05-20",
+      "endDate": "2026-06-28",
+      "price": 6666,
+      "description": "A crazy trip to Korea for the crazy and the insane",
+      "image": "https://www.elal.com/magazine/wp-content/uploads/2017/01/ThinkstockPhotos-528063548.jpg"
+    },
+    {
+      "id": "21",
+      "name": "ונציה",
+      "destination": "ונציה יפה",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-25",
+      "price": 16660,
+      "description": "גדנעדכגכעמסנ",
+      "image": ""
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "tripId": 1,
+      "userId": 1,
+      "people": 2
+    },
+    {
+      "id": "2",
+      "tripId": 2,
+      "userId": 3,
+      "people": 1
+    },
+    {
+      "id": "3",
+      "tripId": 3,
+      "userId": 1,
+      "people": 3
+    },
+    {
+      "id": "4",
+      "tripId": 5,
+      "userId": 4,
+      "people": 2
+    },
+    {
+      "id": "5",
+      "tripId": 8,
+      "userId": 3,
+      "people": 1
+    },
+    {
+      "id": "6",
+      "tripId": 10,
+      "userId": 1,
+      "people": 2
+    },
+    {
+      "id": "7",
+      "tripId": 1,
+      "userId": 1,
+      "people": 3
+    },
+    {
+      "id": "8",
+      "tripId": 11,
+      "userId": 5,
+      "people": 2
+    },
+    {
+      "id": "10",
+      "tripId": 13,
+      "userId": 7,
+      "people": 1
+    },
+    {
+      "id": "11",
+      "tripId": 14,
+      "userId": 8,
+      "people": 2
+    },
+    {
+      "id": "12",
+      "tripId": 15,
+      "userId": 9,
+      "people": 3
+    },
+    {
+      "id": "13",
+      "tripId": 16,
+      "userId": 10,
+      "people": 2
+    },
+    {
+      "id": "14",
+      "tripId": 17,
+      "userId": 11,
+      "people": 1
+    },
+    {
+      "id": "15",
+      "tripId": 18,
+      "userId": 12,
+      "people": 2
+    },
+    {
+      "id": "16",
+      "tripId": 19,
+      "userId": 13,
+      "people": 4
+    },
+    {
+      "id": "17",
+      "tripId": 20,
+      "userId": 14,
+      "people": 2
+    },
+    {
+      "id": "",
+      "tripId": 3,
+      "userId": 1,
+      "people": 1
+    },
+    {
+      "id": "",
+      "tripId": 3,
+      "userId": 1,
+      "people": 1
+    },
+    {
+      "id": "",
+      "tripId": 2,
+      "userId": 1,
+      "people": 5
+    },
+    {
+      "id": "",
+      "tripId": 7,
+      "userId": 1,
+      "people": 8
+    },
+    {
+      "id": "22",
+      "tripId": 15,
+      "userId": 17,
+      "people": 6
+    },
+    {
+      "id": "23",
+      "tripId": 1,
+      "userId": 1,
+      "people": 1
+    },
+    {
+      "id": "24",
+      "tripId": 2,
+      "userId": 10,
+      "people": 2
+    },
+    {
+      "id": "25",
+      "tripId": 1,
+      "userId": 15,
+      "people": 1
+    },
+    {
+      "id": "26",
+      "tripId": 4,
+      "userId": 2,
+      "people": 1
+    },
+    {
+      "id": "27",
+      "tripId": 3,
+      "userId": 2,
+      "people": 1
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
